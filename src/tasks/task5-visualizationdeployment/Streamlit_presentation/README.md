@@ -3,6 +3,7 @@
 
 The sidebar allows to jump from one page to another
 
-Please note that Coastal_Erosion.py if the main streamlit app file. To excute
+Please note that Coastal_Erosion.py is the main streamlit app file. To excute
+requires the following packages : geopandas and folium 
 
 streamlit run Coastal_Erosion.py 
