@@ -5,7 +5,7 @@ import os
 
 path = os.getcwd()
 st.write('path ',path)
-file_path = os.join(path,'/src/tasks/task5-visualizationdeployment/Streamlit_presentation/landsat_images_ids.csv')
+file_path = os.path.join(path,'/src/tasks/task5-visualizationdeployment/Streamlit_presentation/landsat_images_ids.csv')
 #src/tasks/task5-visualizationdeployment/Streamlit_presentation/
 st.write('file_path',file_path)
 
