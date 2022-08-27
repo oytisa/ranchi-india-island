@@ -3,8 +3,7 @@ import numpy as np
 import streamlit as st
 import os
 
-file_path = 'https://github.com/OmdenaAI/ranchi-india-island/blob/main/src/tasks/task5-visualizationdeployment/Streamlit_presentation/landsat_images_ids.csv'
-
+file_path = 'https://raw.githubusercontent.com/OmdenaAI/ranchi-india-island/main/src/tasks/task5-visualizationdeployment/Streamlit_presentation/landsat_images_ids.csv'
 df = pd.read_csv(file_path)
 
 st.header('Data Collection')
