@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import folium
-import numpy as np
 import geopandas 
 
 
@@ -17,21 +16,21 @@ folium.TileLayer('openstreetmap').add_to(sagar)
 folium.TileLayer('Stamen Toner').add_to(sagar)
 
 #load shapefiles for 1990, 2000, 2010 and 2020
-sh1990 = geopandas.read_file('./coastal_shapefiles/1990_sh.zip')
+sh1990 = geopandas.read_file('./coastal_shapefiles/Shoreline_1990.zip')
 folium.GeoJson(data=sh1990["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : 'purple'}, name = '1990').add_to(sagar)
 
-sh2000 = geopandas.read_file('./coastal_shapefiles/2000_sh.zip')
+sh2000 = geopandas.read_file('./coastal_shapefiles/Shoreline_2000.zip')
 folium.GeoJson(data=sh2000["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : 'red'}, name = '2000').add_to(sagar)
 
 
-sh2010 = geopandas.read_file('./coastal_shapefiles/2010_sh.zip')
+sh2010 = geopandas.read_file('./coastal_shapefiles/Shoreline_2010.zip')
 folium.GeoJson(data=sh2010["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : 'blue'}, name = '2010').add_to(sagar)
 
-sh2020 = geopandas.read_file('./coastal_shapefiles/2020_sh.zip')
+sh2020 = geopandas.read_file('./coastal_shapefiles/Shoreline_2020.zip') 
 folium.GeoJson(data=sh2020["geometry"], style_function = lambda x: {'fillColor' : 'none','color' : 'green'}, name = '2020').add_to(sagar)
 
 
-path = './Transects_g/Transects.shp'
+path = './Transects_g/transects_n.zip'
 gdf = geopandas.read_file(path)
 
 gdf_o = gdf
@@ -76,12 +75,20 @@ style_fun = lambda x: {'color': x['properties']['LRR_color']}
 folium.GeoJson(data = gdf_erosion_low[['geometry','LRR_color']], style_function = style_fun, name = 'Low Erosion: -10 < LRR < 0 ').add_to(sagar)
 folium.GeoJson(data = gdf_erosion_medium[['geometry','LRR_color']], style_function = style_fun, name = 'Medium Erosion: -20 < LRR <-10 ').add_to(sagar)
 folium.GeoJson(data = gdf_erosion_high[['geometry','LRR_color']], style_function = style_fun, name = 'High Erosion: -35 < LRR < -20 ').add_to(sagar)
-folium.GeoJson(data = gdf_erosion_extr[['geometry','LRR_color']], style_function = style_fun, name = 'Extreme Erosion: -53 < LRR < -35 ').add_to(sagar)
+#folium.GeoJson(data = gdf_erosion_extr[['geometry','LRR_color']], style_function = style_fun, name = 'Extreme Erosion: -53 < LRR < -35 ').add_to(sagar)
 
-folium.GeoJson(data = gdf_accretion_low[['geometry','LRR_color']], style_function = style_fun, name = 'Low Accretion: 0 < LRR < 10 ').add_to(sagar)
+folium.GeoJson(data = gdf_accretion_low[['geometry','LRR_color']], style_function = style_fun, name = 'Low Accretion: 0 < LRR < 10 ').add_to(sagar)#
 folium.GeoJson(data = gdf_accretion_medium[['geometry','LRR_color']], style_function = style_fun, name = 'Medium Accretion: 10 < LRR < 20 ').add_to(sagar)
 folium.GeoJson(data = gdf_accretion_high[['geometry','LRR_color']], style_function = style_fun, name = 'High Accretion: 20 < LRR < 30 ').add_to(sagar)
-folium.GeoJson(data = gdf_accretion_extr[['geometry','LRR_color']], style_function = style_fun, name = 'Exteme Accretion: 30 < LRR < 40 ').add_to(sagar)
+#folium.GeoJson(data = gdf_accretion_extr[['geometry','LRR_color']], style_function = style_fun, name = 'Exteme Accretion: 30 < LRR < 40 ').add_to(sagar)
+
+
+#predicted shorelines of 2030 and 2040
+sh2030 = geopandas.read_file('./Transects_g/2030_pred.zip')
+folium.GeoJson(data=sh2030["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : '#339933'}, name = '2030 prediction').add_to(sagar)
+
+sh2040 = geopandas.read_file('./Transects_g/2040_pred.zip')
+folium.GeoJson(data=sh2040["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : '#003399'}, name = '2040 prediction').add_to(sagar)
 
 #To choose the check on/off layers 
 folium.map.LayerControl('topleft', collapsed= True).add_to(sagar)
