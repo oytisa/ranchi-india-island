@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import os
 
-path = os.getwd()
+path = os.getcwd()
 st.write('path ',path)
 file_path = os.join(path,'landsat_images_ids.csv')
 
