@@ -3,12 +3,7 @@ import numpy as np
 import streamlit as st
 import os
 
-path = os.getcwd()
-st.write('path ',path)
-file_path = os.path.join(path,'/tree/main/src/tasks/task5-visualizationdeployment/Streamlit_presentation/landsat_images_ids.csv')
-#src/tasks/task5-visualizationdeployment/Streamlit_presentation/
-tree/main/src/tasks/task5-visualizationdeployment/Streamlit_presentation
-st.write('file_path',file_path)
+file_path = 'https://github.com/OmdenaAI/ranchi-india-island/blob/main/src/tasks/task5-visualizationdeployment/Streamlit_presentation/landsat_images_ids.csv'
 
 df = pd.read_csv(file_path)
 
