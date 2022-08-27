@@ -1,9 +1,15 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
+import os
 
+path = os.getwd()
 
-df = pd.read_csv('./landsat_images_ids.csv')
+file_path = os.join(path,'landsat_images_ids.csv')
+
+st.write('file_path',file_path)
+
+df = pd.read_csv(file_path)
 
 st.header('Data Collection')
 st.markdown(
