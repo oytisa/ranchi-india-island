@@ -5,8 +5,9 @@ import os
 
 path = os.getcwd()
 st.write('path ',path)
-file_path = os.path.join(path,'/src/tasks/task5-visualizationdeployment/Streamlit_presentation/landsat_images_ids.csv')
+file_path = os.path.join(path,'/tree/main/src/tasks/task5-visualizationdeployment/Streamlit_presentation/landsat_images_ids.csv')
 #src/tasks/task5-visualizationdeployment/Streamlit_presentation/
+tree/main/src/tasks/task5-visualizationdeployment/Streamlit_presentation
 st.write('file_path',file_path)
 
 df = pd.read_csv(file_path)
