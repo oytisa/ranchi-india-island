@@ -1,7 +1,6 @@
 import streamlit as st
-import os
 
-st.write(os.getcwd())
+#path = "/app/ranchi-india-island"
 st.header('Workflow in Google Earth Engine')
 st.markdown(
 '''
