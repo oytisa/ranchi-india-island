@@ -8,4 +8,4 @@ Below is a chart that shows our shoreline auto-dection method and shapefile gene
 '''
 )  
 
-st.image("https://github.com/OmdenaAI/ranchi-india-island/blob/main/src/tasks/task5-visualizationdeployment/Streamlit_presentation/gee_work_flow.PNG", width=800)
+st.image("./gee_work_flow.PNG", width=800)
