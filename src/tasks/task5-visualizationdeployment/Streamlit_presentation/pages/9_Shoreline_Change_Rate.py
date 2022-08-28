@@ -36,7 +36,7 @@ gdf_o = geopandas.read_file(path)
 gdf = gdf_o.copy()
 
 #make classes and label them using cuts by change rate
-gdf['LRR_cut'] = pd.cut(gdf['LRR'], bins = [-30, -20, -10, 0, 10, 20, 31], 
+gdf['LRR_cut'] = pd.cut(gdf['LRR'], bins = [-30, -20, -5, 0, 5, 20, 31], 
                                     labels = ['Large Erosion','Moderate Erosion', 'Low Erosion', 
                                     'Low Accretion', 'Medium Accretion', 'Large Accretion']) 
                                    
@@ -71,13 +71,13 @@ gdf_accretion_high = gdf[gdf['LRR_cut'] == 'Large Accretion']
 
 
 style_fun = lambda x: {'color': x['properties']['LRR_color']} 
-folium.GeoJson(data = gdf_erosion_low[['geometry','LRR_color']], style_function = style_fun, name = 'Low Erosion: -10 < LRR < 0 ').add_to(sagar)
-folium.GeoJson(data = gdf_erosion_medium[['geometry','LRR_color']], style_function = style_fun, name = 'Medium Erosion: -20 < LRR <-10 ').add_to(sagar)
+folium.GeoJson(data = gdf_erosion_low[['geometry','LRR_color']], style_function = style_fun, name = 'Low Erosion: -5 < LRR < 0 ').add_to(sagar)
+folium.GeoJson(data = gdf_erosion_medium[['geometry','LRR_color']], style_function = style_fun, name = 'Medium Erosion: -20 < LRR <-5 ').add_to(sagar)
 folium.GeoJson(data = gdf_erosion_high[['geometry','LRR_color']], style_function = style_fun, name = 'High Erosion: -30 < LRR < -20 ').add_to(sagar)
 
 
-folium.GeoJson(data = gdf_accretion_low[['geometry','LRR_color']], style_function = style_fun, name = 'Low Accretion: 0 < LRR < 10 ').add_to(sagar)#
-folium.GeoJson(data = gdf_accretion_medium[['geometry','LRR_color']], style_function = style_fun, name = 'Medium Accretion: 10 < LRR < 20 ').add_to(sagar)
+folium.GeoJson(data = gdf_accretion_low[['geometry','LRR_color']], style_function = style_fun, name = 'Low Accretion: 0 < LRR < 5 ').add_to(sagar)#
+folium.GeoJson(data = gdf_accretion_medium[['geometry','LRR_color']], style_function = style_fun, name = 'Medium Accretion: 5 < LRR < 20 ').add_to(sagar)
 folium.GeoJson(data = gdf_accretion_high[['geometry','LRR_color']], style_function = style_fun, name = 'High Accretion: 20 < LRR < 31 ').add_to(sagar)
 
 
