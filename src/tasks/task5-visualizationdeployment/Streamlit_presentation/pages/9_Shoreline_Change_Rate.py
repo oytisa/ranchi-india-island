@@ -31,10 +31,10 @@ folium.GeoJson(data=sh2020["geometry"], style_function = lambda x: {'fillColor' 
 
 
 path = './Transects_g/transects_n.zip'
-gdf = geopandas.read_file(path)
+gdf_o = geopandas.read_file(path)
 
-gdf_o = gdf
-gdf = gdf_o[8:] #the first 8 entries are NANs
+gdf = gdf_o.copy()
+
 #make classes and label them using cuts by change rate
 gdf['LRR_cut'] = pd.cut(gdf['LRR'], bins = [-30, -20, -10, 0, 10, 20, 31], 
                                     labels = ['Large Erosion','Moderate Erosion', 'Low Erosion', 
@@ -51,7 +51,8 @@ color_dict = {
               'Large Accretion': '#6600cc',  #purple 
               }
                                     
-gdf['LRR_color'] = gdf['LRR_cut'].map(color_dict)
+temp = gdf['LRR_cut'].map(color_dict)
+gdf['LRR_color'] = temp.copy()
 
 #examine what is in geojson file
 #gdf.to_file('transects.geojson', driver = 'GeoJSON')
