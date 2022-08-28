@@ -1,5 +1,7 @@
 import streamlit as st
+import os
 
+st.write(os.getcwd())
 st.header('Workflow in Google Earth Engine')
 st.markdown(
 '''
