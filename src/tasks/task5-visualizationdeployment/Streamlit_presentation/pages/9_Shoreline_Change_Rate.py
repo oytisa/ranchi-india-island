@@ -16,21 +16,21 @@ folium.TileLayer('openstreetmap').add_to(sagar)
 folium.TileLayer('Stamen Toner').add_to(sagar)
 
 #load shapefiles for 1990, 2000, 2010 and 2020
-sh1990 = geopandas.read_file('./coastal_shapefiles/Shoreline_1990.zip')
+sh1990 = geopandas.read_file('coastal_shapefiles/Shoreline_1990.zip')
 folium.GeoJson(data=sh1990["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : 'purple'}, name = '1990').add_to(sagar)
 
-sh2000 = geopandas.read_file('./coastal_shapefiles/Shoreline_2000.zip')
+sh2000 = geopandas.read_file('coastal_shapefiles/Shoreline_2000.zip')
 folium.GeoJson(data=sh2000["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : 'red'}, name = '2000').add_to(sagar)
 
 
-sh2010 = geopandas.read_file('./coastal_shapefiles/Shoreline_2010.zip')
+sh2010 = geopandas.read_file('coastal_shapefiles/Shoreline_2010.zip')
 folium.GeoJson(data=sh2010["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : 'blue'}, name = '2010').add_to(sagar)
 
-sh2020 = geopandas.read_file('./coastal_shapefiles/Shoreline_2020.zip') 
+sh2020 = geopandas.read_file('coastal_shapefiles/Shoreline_2020.zip') 
 folium.GeoJson(data=sh2020["geometry"], style_function = lambda x: {'fillColor' : 'none','color' : 'green'}, name = '2020').add_to(sagar)
 
 
-path = './Transects_g/transects_n.zip'
+path = 'Transects_g/transects_n.zip'
 gdf_o = geopandas.read_file(path)
 
 gdf = gdf_o.copy()
@@ -83,10 +83,10 @@ folium.GeoJson(data = gdf_accretion_high[['geometry','LRR_color']], style_functi
 
 
 #predicted shorelines of 2030 and 2040
-sh2030 = geopandas.read_file('./Transects_g/2030_pred.zip')
+sh2030 = geopandas.read_file('Transects_g/2030_pred.zip')
 folium.GeoJson(data=sh2030["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : '#339933'}, name = '2030 prediction').add_to(sagar)
 
-sh2040 = geopandas.read_file('./Transects_g/2040_pred.zip')
+sh2040 = geopandas.read_file('Transects_g/2040_pred.zip')
 folium.GeoJson(data=sh2040["geometry"], style_function = lambda x: {'fillColor' : 'white','color' : '#003399'}, name = '2040 prediction').add_to(sagar)
 
 #To choose the check on/off layers 
