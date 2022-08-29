@@ -9,4 +9,4 @@ Below is a chart that shows our shoreline auto-dection method and shapefile gene
 '''
 )  
 
-st.image("gee_work_flow.PNG", width=800)
+st.image("data/gee_work_flow.PNG", width=800)
