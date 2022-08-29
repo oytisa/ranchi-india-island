@@ -36,6 +36,7 @@ gdf_o = geopandas.read_file(path)
 gdf = gdf_o.copy()
 
 #make classes and label them using cuts by change rate
+# updated low erosion (-5,0) and medium erosioin (-20,-5) similarly to accretion
 gdf['LRR_cut'] = pd.cut(gdf['LRR'], bins = [-30, -20, -5, 0, 5, 20, 31], 
                                     labels = ['Large Erosion','Moderate Erosion', 'Low Erosion', 
                                     'Low Accretion', 'Medium Accretion', 'Large Accretion']) 
