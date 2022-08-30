@@ -6,7 +6,7 @@ import os
 print(os.system('pwd'))
 print(os.system('ls -l'))
 
-file_path = '/app/ranchi-india-island/data/landsat_images_ids.csv'
+file_path = '/app/ranchi-india-island/src/src/tasks/task5-visualizationdeployment/Streamlit_presentation/data/landsat_images_ids.csv'
 df = pd.read_csv(file_path)
 
 st.header('Data Collection')
