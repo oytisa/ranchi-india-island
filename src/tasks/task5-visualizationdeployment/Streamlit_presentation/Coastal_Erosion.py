@@ -1,6 +1,7 @@
 import streamlit as st
-
+import os
 # This is the main streamlit app file
+print(os.system('pwd'))
 
 st.set_page_config(page_title='Coastal Erosion', layout = 'wide')
 
