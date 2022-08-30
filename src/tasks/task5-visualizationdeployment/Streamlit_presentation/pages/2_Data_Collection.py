@@ -4,7 +4,7 @@ import streamlit as st
 import os
 
 print(os.system('pwd'))
-print(os.system('ls -l'))
+print(os.system('ls -lrt /app/ranchi-india-island/src/src/tasks/task5-visualizationdeployment/Streamlit_presentation/data'))
 
 file_path = '/app/ranchi-india-island/src/src/tasks/task5-visualizationdeployment/Streamlit_presentation/data/landsat_images_ids.csv'
 df = pd.read_csv(file_path)
