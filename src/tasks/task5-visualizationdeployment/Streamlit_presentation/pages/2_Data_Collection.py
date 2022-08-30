@@ -4,9 +4,10 @@ import streamlit as st
 import os
 
 print(os.system('pwd'))
-print(os.system('ls -lrt /app/ranchi-india-island/src/tasks/task5-visualizationdeployment/Streamlit_presentation/data'))
+#print(os.system('ls -lrt /app/ranchi-india-island/src/tasks/task5-visualizationdeployment/Streamlit_presentation/data'))
 
-file_path = '/app/ranchi-india-island/src/tasks/task5-visualizationdeployment/Streamlit_presentation/data/landsat_images_ids.csv'
+#file_path = '/app/ranchi-india-island/src/tasks/task5-visualizationdeployment/Streamlit_presentation/data/landsat_images_ids.csv'
+file_path = 'data/landsat_images_ids.csv'
 df = pd.read_csv(file_path)
 
 st.header('Data Collection')
