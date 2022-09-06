@@ -8,4 +8,4 @@ st.markdown(
 The library applies image classification and sub-pixel resolution to MNDWI images along with OTSU's thresholding algorithm.
 '''
 )
-st.write("/data/coastsat_output.PNG") 
+st.image("/data/coastsat_output.PNG") 
